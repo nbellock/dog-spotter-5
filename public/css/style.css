@@ -1,0 +1,454 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+	position: relative;
+	font-family: 'News Cycle', sans-serif;
+	letter-spacing: .05em;
+}
+
+
+/*********** Global ***********/
+h1, h2 {
+	font-family: 'Playfair Display', serif;
+	line-height: 1.2;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/*********** Navbar ***********/
+.navbar {
+  margin-bottom: 50px;
+  text-align: center;
+  background-color: #063166;
+  border: none;
+  opacity: .8;
+	border-radius: 0;
+}
+
+.navbar-default .navbar-nav>li> {
+	text-align: left;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #fff;
+	font-size: 14px;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+	color: #60c0dd;
+}
+
+
+.navbar.center .navbar-inner {
+  text-align: left;
+}
+
+.navbar.center, .navbar-inner, .nav {
+  display: inline-block;
+  float: none;
+}
+
+#myNavbar {
+	text-align: left;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+#profiles, #list {
+	display: none;
+}
+
+#login-side {
+	padding-left: 30px;
+}
+
+#login-side li {
+	color: #fff;
+	text-transform: capitalize;
+	font-size: 14px;
+}
+
+/*********** Main ***********/
+.show {
+	display: block;
+}
+
+#logo {
+	font-size: 50px;
+	letter-spacing: 10px;
+	text-align: center;
+	margin-bottom: 25px;
+	font-family: 'Playfair Display', serif;
+}
+
+.container {
+	height: 100vh;
+}
+
+.col-md-3, .col-xs-12 {
+	padding-right: 2px;
+	padding-left: 2px;
+}
+ 
+.dog-image {
+	height: 220px;
+	width: 220px;
+}
+
+.dogs-for-info {
+	margin-top: 20px;
+}
+
+.filter-btn {
+	margin: -40px 0px 40px 15px;
+}
+
+.show-all-btn {
+	margin: -40px 0px 40px 0px;
+}
+
+#filter-dogs {
+	height: 200px;
+	margin-top: -35px;
+	margin-bottom: 5px;
+	padding: 15px;
+	background-color: #8caed8;
+}
+
+#filter-dogs input {
+	margin-right: 5px;
+}
+
+#filter-dogs label, #filter-dogs input {
+	cursor: pointer;
+}
+
+#filter-dogs ul {
+	height: 200px;
+	padding-top: 10px;
+	margin-left: -20px;
+	margin-right: 0;
+	width: 105%;
+}
+
+#filter-dogs li {
+	list-style: none;
+}
+
+.all-dogs-listings {
+	margin-bottom: 80px;
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+}
+
+.dog-listing-col {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.dog-listing {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.dog-listing-title {
+	font-size: 15px;
+}
+
+.dog-listing-btn {
+	margin-top: 8px;
+}
+
+.dog-filter-btn {
+	margin-top: 15px;
+	text-align: left;
+}
+
+.index-background {
+	background-image: url("../images/background_image.jpg");
+	width: 100%;
+	height: 100vh;
+	margin: 0 auto;
+	margin-top: -50px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#text-overlay {
+	position: absolute;
+	top: 45%;
+	left: 3%;
+	width: 470px;
+	background-color: #fff;
+	opacity: .8;
+	padding: 20px 25px 35px 25px;
+	color: #000;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+.main-button, #submit {
+	height: 50px;
+	padding: 10px;
+	border-radius: 5%;
+	border: 2px solid #063166;
+	background-color: #063166;
+	color: #fff;
+	margin-top: 15px;
+}
+
+.main-button a {
+	color: #fff;
+}
+
+.register-btn a {
+	font-size: 17px;
+}
+
+.main-button:hover, #submit:hover {
+	background-color: #60c0dd;
+	border: 2px solid #60c0dd;
+}
+
+.source {
+	position: absolute;
+	bottom: 0;
+	right: 2%;
+	font-size: 11px;
+}
+
+.modal-join-title {
+	text-align: center;
+}
+
+.main-footer {
+	height: 100px;
+}
+
+.register-page, .login-page {
+	width: 50%;
+	max-width: 400px;
+}
+
+.register-page input, .login-page input {
+ 	width: 100%;
+ 	height: 40px;
+ 	padding-left: 5px;
+}
+
+.register-page #submit, .login-page #submit {
+	margin-left: 0;
+}
+
+.register-page .statement, .login-page .statement {
+	text-align: left;
+	margin-left: -4%;
+}
+
+.input-group {
+	margin-top: 5px;
+}
+
+
+.select {
+	margin-bottom: 10px;
+}
+
+.input-group .form-control {
+	margin-top: 0;
+}
+
+/* MODAL BAR CHART
+/******************************************************/
+.modal-body {
+	text-align: center;
+}
+
+.modal-title {
+	text-align: center;
+}
+
+.chart {
+  display: table;
+  table-layout: fixed;
+  width: 85%;
+  max-width: 85%;
+  height: 200px;
+  text-align: left;
+}
+
+.chart li {
+  position: relative;
+  display: table-row;
+  vertical-align: left;
+}
+
+.chart span {
+  margin: .75em 1em;
+  display: block;
+  background: #a8dded;
+  color: #063166;
+  animation: draw 1s ease-in-out;
+  height: 35px;
+}
+
+.chart span:before {
+  position: absolute;
+  padding: 5px 1em 0;
+  display: block;
+  text-align: left;
+  content: attr(title);
+  word-wrap: break-word;
+  height: 30px;
+}
+
+@keyframes draw {
+  0% {
+    width: 0;
+  }
+}
+
+.lifespan, .weight {
+	text-align: left;
+	margin-left: 10%;
+}
+
+.weight-key {
+	text-align: left;
+	list-style: none;
+	margin-left: 5%;
+	font-size: 12.5px;
+}
+
+.chart-key {
+	font-size: 12.5px;
+	text-align: center;
+	margin-top: 20px;
+	margin-left: 5%;
+}
+
+
+/* LIKERT SURVEY STYLING
+/******************************************************/
+
+.wrap {
+  font:12px Arial, san-serif;
+}
+
+.survey-header {
+  margin-bottom: 25px;
+}
+
+.breed input, .dog-name input, .zip input {
+ 	width: 300px;
+ 	height: 30px;
+}
+
+#submit {
+	margin-left: 4%;
+}
+
+.breed-dropdown {
+	height: 40px;
+}
+
+
+form .statement {
+  display:block;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 30px 0 0 4.25%;
+  margin-bottom:10px;
+	font-family: 'News Cycle', sans-serif;
+}
+
+form .likert {
+  list-style:none;
+  width:100%;
+  margin:0;
+  padding:0 0 35px;
+  display:block;
+  border-bottom:2px solid #efefef;
+}
+
+form .likert:last-of-type {border-bottom:0;}
+form .likert:before {
+  content: '';
+  position:relative;
+  top:11px;
+  left:9.5%;
+  display:block;
+  background-color:#efefef;
+  height:4px;
+  width:78%;
+}
+
+form .likert li {
+  display:inline-block;
+  width:19%;
+  text-align:center;
+  vertical-align: top;
+	font-family: 'News Cycle', sans-serif;
+}
+
+form .likert label {
+  margin-top: 15px;
+}
+
+form .likert li input[type=radio] {
+  display:block;
+  position:relative;
+  top:0;
+  left:50%;
+  margin-left:-6px;
+}
+
+form .likert li input[type=radio]:hover {
+  cursor: pointer;
+}
+
+form .likert li label {width:100%;} {
+  margin:40px 0;
+  padding:0 4.25%;
+  text-align:right
+} 
+
+
+@media only screen and (max-width: 991px) {
+
+	#filter-dogs {
+		height: 280px;
+	}
+
+	.dog-listing {
+		text-align: center;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+
+	#filter-dogs {
+		height: 400px;
+	}
+
+	.register-page, .login-page {
+		width: 90%;
+	}
+}

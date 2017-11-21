@@ -1,0 +1,23 @@
+<div class="container login-page text-center">
+<div class= "col-lg-12">
+  <form method="POST" action="/api/login?_method=GET">
+    <h2 class= "survey-header">Log In</h2>
+
+    <div class= "wrap">
+      <label class= "statement"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="username" required>
+
+      <label class= "statement"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+      
+      <br>
+      <button type="submit" class="btn btn-lg btn-primary" id="submit" data-toggle="modal">Log In</button>
+      <br>
+    </div>
+
+     <label class="statement">Don't have an account? <a href= "/signin">Click here to sign up!</a></label>
+     <br>
+  </form>
+</div>
+</div>
+<footer class="main-footer"></footer>

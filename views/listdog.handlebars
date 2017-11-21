@@ -1,0 +1,162 @@
+
+<div class="survey">
+  <div class="container text-left">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="text-center survey-header">Create Your Dog's Profile</h2>
+        <div class="wrap">
+
+          <div class="row">
+            <div class="col-sm-6 col-md-offset-3">
+              <form id="uploadForm" enctype="multipart/form-data" class="form-group">
+                <label class="select">Select an image for upload</label>
+                <div class="input-group">
+                  <label class="input-group-btn">
+                    <span class="btn btn-primary">
+                      Browse&hellip; <input type="file" name="userPhoto" id="choose-file" style="display: none;" single>
+                    </span>
+                  </label>
+                  <input type="text" name="filename-text" class="form-control" readonly required />
+                  <span class="input-group-btn">
+                    <button type="reset" class="btn btn-primary">Reset</button>
+                    <button type="button" id="upload-image" class="btn btn-primary">Upload</button>
+                  </span>
+                </div>        
+                <hr>
+              </form>			
+            </div>
+          </div>
+
+          <div class="row" id="dog-preview-container">
+            <div class="col-sm-6 col-sm-offset-3">
+              <img id="dog-preview" src="" alt="" class="img-rounded img-responsive">
+            </div>
+          </div>
+
+          <form id="dog-profile">
+            <input type="hidden" value="" name="imagepath" id="imagepath" />
+            <label class="statement dog-name">What is your dog's name?</label>
+            <ul class='q1 dog-name'>
+              <input type="text" name="name" required></li>
+            </ul>
+            <hr>
+            <label class="statement breed">What is the breed of your dog?</label>
+            <ul class='q2 breed'>
+                <select name="breed" class="breed-dropdown">
+                  <option value="Basset Hound">Basset Hound</option>
+                  <option value="Beagle">Beagle</option>
+                  <option value="Boxer">Boxer</option>
+                  <option value="Bull Dog">Bull Dog</option>
+                  <option value="Dalmation">Dalmation</option>
+                  <option value="Doberman">Doberman</option>
+                  <option value="Cockapoo">Cockapoo</option>
+                  <option value="Collie">Collie</option>
+                  <option value="Foxhound">Foxhound</option>
+                  <option value="German Shepherd">German Shepherd</option>
+                  <option value="Golden Retriever">Golden Retriever</option>
+                  <option value="Goldendoodle">Goldendoodle</option>
+                  <option value="Greyhound">Greyhound</option>
+                  <option value="Maltese">Maltese</option>
+                  <option value="Mutt">Mutt</option>
+                  <option value="Pit Bull">Pit Bull</option>
+                  <option value="Pomeranian">Pomeranian</option>
+                  <option value="Poodle">Poodle</option>
+                  <option value="Portuguese Water Dog">Portuguese Water Dog</option>
+                  <option value="Pug">Pug</option>
+                  <option value="Saint Bernard">Saint Bernard</option>
+                  <option value="Shih Tzu">Shih Tzu</option>
+                  <option value="Siberian Husky">Siberian Husky</option>
+                  <option value="Yorkshire Terrier">Yorkshire Terrier</option>
+              </select>
+            </ul>
+            <hr>
+            <label class="statement zip">What zip code are you and your dog located? (This helps others connect with people and dogs in their area.)</label>
+            <ul class='q3 zip'>
+              <input type="text" name="zip" required></li>
+            </ul>
+            <hr>
+            <label class="statement">How often does your dog shed?</label>
+            <ul class='likert q4'>
+              <li><input type="radio" name="q4" value="100" required><label>Way too much</label></li>
+              <li><input type="radio" name="q4" value="75" required><label>A lot</label></li>
+              <li><input type="radio" name="q4" value="50" required><label>Average</label></li>
+              <li><input type="radio" name="q4" value="25" required><label>A little</label></li>
+              <li><input type="radio" name="q4" value="0" required><label>Not at all</label></li>
+            </ul>
+            <label class="statement">How active is your dog?</label>
+            <ul class='likert q5'>
+              <li><input type="radio" name="q5" value="100" required><label>Incredibly Active</label></li>
+              <li><input type="radio" name="q5" value="75" required><label>Very active</label></li>
+              <li><input type="radio" name="q5" value="50" required><label>Average</label></li>
+              <li><input type="radio" name="q5" value="25" required><label>Not very active</label></li>
+              <li><input type="radio" name="q5" value="0" required><label>The calmest it gets</label></li>
+            </ul>
+            <label class="statement">How easy is/was it your dog to train?</label>
+            <ul class='likert q6'>
+              <li><input type="radio" name="q6" value="100" required><label>Incredibly easy</label></li>
+              <li><input type="radio" name="q6" value="75" required><label>Very easy</label></li>
+              <li><input type="radio" name="q6" value="50" required><label>Average</label></li>
+              <li><input type="radio" name="q6" value="25" required><label>Not so easy</label></li>
+              <li><input type="radio" name="q6" value="0" required><label>Impossible</label></li>
+            </ul>
+            <label class="statement">How kid-friendly is your dog?</label>
+            <ul class='likert q7'>
+              <li><input type="radio" name="q7" value="100" required><label>The friendliest</label></li>
+              <li><input type="radio" name="q7" value="75" required><label>Very</label></li>
+              <li><input type="radio" name="q7" value="50" required><label>Average</label></li>
+              <li><input type="radio" name="q7" value="25" required><label>A little</label></li>
+              <li><input type="radio" name="q7" value="0" required><label>Not at all friendly</label></li>
+            </ul>
+            <label class="statement">How easy is it to groom your dog?</label>
+            <ul class='likert q8'>
+              <li><input type="radio" name="q8" value="100" required><label>Incredibly easy</label></li>
+              <li><input type="radio" name="q8" value="75" required><label>Very easy</label></li>
+              <li><input type="radio" name="q8" value="50" required><label>Average</label></li>
+              <li><input type="radio" name="q8" value="25" required><label>Not so easy</label></li>
+              <li><input type="radio" name="q8" value="0" required><label>Impossible</label></li>
+            </ul>
+            <label class="statement">What is the drooling potential of your dog?</label>
+            <ul class='likert q9'>
+              <li><input type="radio" name="q9" value="100" required><label>Way too much</label></li>
+              <li><input type="radio" name="q9" value="75" required><label>A lot</label></li>
+              <li><input type="radio" name="q9" value="50" required><label>Average</label></li>
+              <li><input type="radio" name="q9" value="25" required><label>A little</label></li>
+              <li><input type="radio" name="q9" value="0" required><label>None at all</label></li>
+            </ul>
+            <label class="statement">How often does your dog bark?</label>
+            <ul class='likert q10'>
+              <li><input type="radio" name="q10" value="100" required><label>Way too much</label></li>
+              <li><input type="radio" name="q10" value="75" required><label>A lot</label></li>
+              <li><input type="radio" name="q10" value="50" required><label>Average</label></li>
+              <li><input type="radio" name="q10" value="25" required><label>A little</label></li>
+              <li><input type="radio" name="q10" value="0" required><label>Not at all</label></li>
+            </ul>
+            <label class="statement">How well does your dog tolerate being alone?</label>
+            <ul class='likert q11'>
+              <li><input type="radio" name="q11" value="100" required><label>Incredibly well</label></li>
+              <li><input type="radio" name="q11" value="75" required><label>Very well</label></li>
+              <li><input type="radio" name="q11" value="50" required><label>Average</label></li>
+              <li><input type="radio" name="q11" value="25" required><label>Not so well</label></li>
+              <li><input type="radio" name="q11" value="0" required><label>Terribly</label></li>
+            </ul>
+            <label class="statement">What is the approximate weight of your dog?</label>
+            <ul class='likert q12'>
+              <li><input type="radio" name="q12" value="100" required><label>90+ lbs</label></li>
+              <li><input type="radio" name="q12" value="75" required><label>66-89 lbs</label></li>
+              <li><input type="radio" name="q12" value="50" required><label>41-65 lbs</label></li>
+              <li><input type="radio" name="q12" value="25" required><label>21-40 lbs</label></li>
+              <li><input type="radio" name="q12" value="0" required><label>0-20 lbs</label></li>
+            </ul>
+ 
+            <button type="submit" class="btn btn-lg btn-primary" id="dog-profile-submit" data-toggle="modal">Submit</button>
+            <br>
+            <p class="error-message"></p>
+
+          </form>
+        </div> <!-- End Wrap -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="main-footer"></footer>

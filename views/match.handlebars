@@ -1,0 +1,51 @@
+<div class="container">
+<div class="row">
+	<h1>Your Match</h1>
+	<hr>
+	<br>
+	<div class="col-md-4">
+		<h2 class="title">{{this.owner_name}}</h2>
+	  <h4 class="sub-title">Breed: {{this.breed}} | Location: {{location}}</h4>
+		<img class= "dog-image" src='/uploads/{{image}}'></img>
+	</div>
+	<div class="col-md-8">
+		<ul class="chart">
+			<p class="chart-key">0% = Low | 25% = Moderate | 50% = Average | 75% = Above Avg | 100% = High
+			<li>
+				<span style="width:{{this.shedding}}%" title="Amount of Shedding: {{this.shedding}}%"></span>
+			</li>
+			<li>
+				<span style="width:{{this.energy}}%" title="Energy Level: {{this.energy}}%"></span>
+			</li>
+			<li>
+				<span style="width:{{this.trainability}}%" title="Trainability: {{this.trainability}}%"></span>
+			</li>
+			<li>
+				<span style="width:{{this.kid}}%" title="Kid Friendly: {{this.kid}}%"></span>
+			</li>
+			<li>
+				<span style="width:{{this.groom}}%" title="Easy to Groom: {{this.groom}}%"></span>
+			</li>
+			<li>
+				<span style="width:{{this.drool}}%" title="Likeliness to Drool: {{this.drool}}%"></span>
+			</li>
+			<li>
+				<span style="width:{{this.bark}}%" title="Likeliness to Bark: {{this.bark}}%"></span>
+			</li>
+			<li>
+				<span style="width:{{this.independence}}%" title="Independence Level: {{this.independence}}%"></span>
+			</li>
+			<li>
+				<span style="width:{{this.weight}}%" title="*Approximate Weight: {{this.weight}}%"></span>
+			</li>
+		</ul>    
+		<ul class="weight-key">*Where: 
+			<li>0% = Toy Dog (0-20lbs)</li>
+			<li>25% = Small Dog (21-40lbs)</li>
+			<li>50% = Medium Dog (41-65lbs)</li>
+			<li>75% = Large Dog (66-89lbs)</li>
+			<li>100% = Very Large Dog (90+lbs)</li>
+		</ul>
+	</div>			
+</div>	
+</div>
