@@ -1,4 +1,4 @@
-
+{{!-- // --}}
 <div class="survey">
   <div class="container text-left">
     <div class="row">
@@ -11,18 +11,19 @@
               <input type="text" name="name" required></li>
             </ul>
             <hr>
-            <label class="statement zip">What zip code are you located? (This helps others connect with people and dogs in their area.)</label>
+            <label class="statement zip">What zip code are you located? (This helps others connect with people and dogs
+              in their area.)</label>
             <ul class='q2 zip'>
               <input type="text" name="zip" required></li>
             </ul>
             <hr>
             {{#each questions}}
             <label class="statement">{{qText}}</label>
-            <ul class='likert'>            
+            <ul class='likert'>
               {{> questions/survey-questions qIdx=@key }}
-            </ul>  
+            </ul>
             {{/each}}
-                   
+
             <button type="submit" class="btn btn-lg btn-primary" id="submit-survey" data-toggle="modal">Submit</button>
             <br>
             <p class="error-message"></p>

@@ -3,15 +3,15 @@ var passport = require("../config/passport");
 var fs = require("fs");
 var surveyQs = require("../data/surveyQuestions");
 
-module.exports = function(app) {
+module.exports = function (app) {
 
-  app.post("/api/filter", function(req, res) {
+  app.post("/api/filter", function (req, res) {
     var breed = req.body.breed;
     var stringBreed = breed.join("+");
     res.redirect("/finddog/" + stringBreed);
   });
 
-  app.post("/api/new", function(req, res) {
+  app.post("/api/new", function (req, res) {
     db.Dog.create({
       owner_name: req.body.name,
       breed: req.body.breed,
@@ -27,8 +27,8 @@ module.exports = function(app) {
       weight: req.body.q12,
       image: req.body.imagepath,
       OwnerId: req.user.id
-    }).then(function(newDog) {
-      res.json({id:newDog.dataValues.id});
+    }).then(function (newDog) {
+      res.json({ id: newDog.dataValues.id });
     });
   });
 
@@ -42,42 +42,42 @@ module.exports = function(app) {
     });
   });
 
-  app.put("/api/dogs/:id", function(req, res) {
+  app.put("/api/dogs/:id", function (req, res) {
     db.Dog.update({
-        treats: req.body.treats
-      }, {
+      treats: req.body.treats
+    }, {
         where: {
           id: req.params.id
         }
-      }).then(function(result) {
+      }).then(function (result) {
         res.json(result);
       });
   });
 
-  app.post('/api/newOwner', function(req, res) {
+  app.post('/api/newOwner', function (req, res) {
     db.Owner.create({
       username: req.body.uname,
-      password: req.body.psw, 
+      password: req.body.psw,
       firstname: req.body.fn,
       lastname: req.body.ln,
       email: req.body.email,
       address: req.body.address
-    }).then(function() {
+    }).then(function () {
       res.redirect("/login");
-    }).catch(function(err) {
+    }).catch(function (err) {
       console.log(err);
       res.json(err);
       // res.status(422).json(err.errors[0].message);
     });
   });
 
-  app.get("/api/login", passport.authenticate("local"), function(req, res) {
-      res.redirect("/listdog");
+  app.get("/api/login", passport.authenticate("local"), function (req, res) {
+    res.redirect("/listdog");
   });
 
-  app.get("/api/user_data", function(req, res) {
+  app.get("/api/user_data", function (req, res) {
     if (!req.user) {
-      // The user is not logged in, send back an empty object
+      // THe user is not logged in, send back an empty object
       res.json({});
     } else {
       // Otherwise send back the user's email and id
@@ -89,7 +89,7 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/logout", function(req, res) {
+  app.get("/logout", function (req, res) {
     req.logout();
     res.redirect("/");
   });
@@ -97,13 +97,13 @@ module.exports = function(app) {
   //new profile
   app.get("/newprofile/:id", function (req, res) {
     var id = req.params.id;
-    db.Dog.findAll({where:{id:id}}).then(function(result) {
-      var hbsObject = {dogdata:[]};
+    db.Dog.findAll({ where: { id: id } }).then(function (result) {
+      var hbsObject = { dogdata: [] };
 
-      for (var i=0; i < result.length; i++) {
+      for (var i = 0; i < result.length; i++) {
         hbsObject.dogdata.push(result[i].dataValues);
       }
-      
+
       res.render("newprofile", hbsObject.dogdata[0]);
     });
   })
@@ -111,10 +111,10 @@ module.exports = function(app) {
   //matches
   app.get("/match/:id", function (req, res) {
     var id = req.params.id;
-    db.Dog.findAll({where:{id:id}}).then(function(result) {
-      var hbsObject = {dogdata:[]};
-      
-      for (var i=0; i < result.length; i++) {
+    db.Dog.findAll({ where: { id: id } }).then(function (result) {
+      var hbsObject = { dogdata: [] };
+
+      for (var i = 0; i < result.length; i++) {
         hbsObject.dogdata.push(result[i].dataValues);
       }
 
@@ -124,7 +124,7 @@ module.exports = function(app) {
   });
 
 
-  app.post('/api/newsurvey', function(req, res) {
+  app.post('/api/newsurvey', function (req, res) {
     var respondentData = req.body;
     var respondentArray = [];
     var storeArray = [];
@@ -135,13 +135,13 @@ module.exports = function(app) {
     for (var i = 0; i < 9; i++) {
       respondentArray.push(respondentData['q' + i]);
     }
-    
+
     //get data from the dogs table to compare to the survey data
     db.Dog.findAll({}).then(function (data) {
       //console.log(data);
-      
+
       //convert all database returns to arrays which will be held in a general array (storeArray)
-      for (var i=0; i < data.length; i++) {
+      for (var i = 0; i < data.length; i++) {
         var dataUnit = []; //this array to be recreated on each loop ...
 
         dataUnit.push(data[i].dataValues.shedding);
@@ -158,16 +158,16 @@ module.exports = function(app) {
         storeArray.push(dataUnit);
       }
 
-      for (var i=0; i < storeArray.length; i++) {
+      for (var i = 0; i < storeArray.length; i++) {
         var dogDiff = 0;
-        for (var j=0; j < respondentArray.length; j++) {
-            var userResp = respondentArray[j];
-            var dataResp = storeArray[i][j];
+        for (var j = 0; j < respondentArray.length; j++) {
+          var userResp = respondentArray[j];
+          var dataResp = storeArray[i][j];
 
-            dogDiff += Math.abs(userResp - dataResp);
+          dogDiff += Math.abs(userResp - dataResp);
         }
         diffArray.push(dogDiff);
-      }      
+      }
 
       //This gets us the index of the lowest value in diffArray 
       //  - this index is generated in the second loop which matches the index of the most compatible friend in the friend array
@@ -189,11 +189,11 @@ module.exports = function(app) {
         bark: req.body.q9,
         independence: req.body.q10,
         weight: req.body.q11
-      });    
-      
-      res.json({id:matchedDogID});
+      });
+
+      res.json({ id: matchedDogID });
     });
-    
+
   });
 
   //not necessary yet, questions are retrieved internally by a simple require statement
@@ -202,12 +202,12 @@ module.exports = function(app) {
   });
 
   //delete
-  app.delete("/api/deletedog/:id", function(req, res) {
+  app.delete("/api/deletedog/:id", function (req, res) {
     db.Dog.destroy({
       where: {
         id: req.params.id
       }
-    }).then(function(result) {
+    }).then(function (result) {
       res.json(result);
     });
   });

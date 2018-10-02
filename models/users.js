@@ -1,9 +1,10 @@
-module.exports = function(sequelize, DataTypes) {
+//
+module.exports = function (sequelize, DataTypes) {
   var User = sequelize.define("User", {
-    
+
     name: {
       type: DataTypes.STRING,
-    }, 
+    },
     location: {
       type: DataTypes.STRING,
       allowNull: true
@@ -23,7 +24,7 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: 0,
       allowNull: false
     },
-    trainability : {
+    trainability: {
       type: DataTypes.INTEGER,
       defaultValue: 0,
       allowNull: false
@@ -58,8 +59,8 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: 0,
       allowNull: false
     },
-      createdAt: DataTypes.DATE,
-      updatedAt: DataTypes.DATE
+    createdAt: DataTypes.DATE,
+    updatedAt: DataTypes.DATE
   });
 
   return User;

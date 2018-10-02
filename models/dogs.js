@@ -1,12 +1,13 @@
-module.exports = function(sequelize, DataTypes) {
+//
+module.exports = function (sequelize, DataTypes) {
   var Dog = sequelize.define("Dog", {
-    
+
     owner_name: {
       type: DataTypes.STRING,
     },
     breed: {
       type: DataTypes.STRING,
-    }, 
+    },
     location: {
       type: DataTypes.STRING,
       allowNull: true
@@ -26,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: 0,
       allowNull: false
     },
-    trainability : {
+    trainability: {
       type: DataTypes.INTEGER,
       defaultValue: 0,
       allowNull: false
@@ -65,17 +66,17 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: true
     },
-      createdAt: DataTypes.DATE,
-      updatedAt: DataTypes.DATE
+    createdAt: DataTypes.DATE,
+    updatedAt: DataTypes.DATE
   });
 
- Dog.associate = function(models) {
+  Dog.associate = function (models) {
     Dog.belongsTo(models.Owner, {
       foreignKey: {
         allowNull: false
-        }
-      });
-   };
+      }
+    });
+  };
 
   return Dog;
 };
