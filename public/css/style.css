@@ -329,8 +329,8 @@ a:hover {
 .chart span {
   margin: .75em 1em;
   display: block;
-  background: #a8dded;
-  color: rgb(68, 86, 106);;
+  background: rgb(68, 86, 106);
+  color: white;;
   animation: draw 1s ease-in-out;
   height: 35px;
 }
